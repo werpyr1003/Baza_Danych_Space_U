@@ -1,0 +1,13 @@
+system_id,system,central_star,x_coord,y_coord,z_coord,galaxy_id
+1,Lunaris,Lunaris Star,0.0,0.0,0.0,1
+2,Quirinius,Quirinius Star,-404.7,896.75,338.33,1
+3,Aerion,Aerion Star,-991.35,937.71,-198.86,2
+4,Cadris,Cadris Star,-1046.43,905.86,-266.62,2
+5,Neptunus,Neptunus Star,-348.28,-569.0,-115.31,3
+6,Karnis,Karnis Star,-360.27,-441.65,-276.46,3
+7,Zantheos,Zantheos Star,-307.05,-394.39,-109.39,3
+8,Nymerion,Nymerion Star,-293.91,-412.61,-231.08,3
+9,Thandor,Thandor Star,-318.02,-473.04,-111.63,3
+10,Lunaris,Lunaris Star,139.8,-886.48,644.18,4
+11,Minerva,Minerva Star,20.1,-1010.61,589.66,4
+12,Thalos,Thalos Star,26.07,-969.11,666.1,4

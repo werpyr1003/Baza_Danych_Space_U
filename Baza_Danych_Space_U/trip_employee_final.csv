@@ -1,0 +1,345 @@
+trip_employee_id,role_in_trip,employee_id,trip_id
+1,Pilot,24,1
+2,Navigator,6,1
+3,Commander,49,1
+4,Pilot,17,2
+5,Navigator,12,2
+6,Technician,1,2
+7,Pilot,35,3
+8,Navigator,33,3
+9,Mission Specialist,19,3
+10,Mission Specialist,15,3
+11,Pilot,18,4
+12,Navigator,4,4
+13,Commander,49,4
+14,Mission Specialist,50,4
+15,Pilot,21,5
+16,Navigator,7,5
+17,Commander,49,5
+18,Mission Specialist,15,5
+19,Pilot,5,6
+20,Navigator,34,6
+21,Mission Specialist,30,6
+22,Pilot,23,7
+23,Navigator,6,7
+24,Commander,49,7
+25,Pilot,17,8
+26,Navigator,26,8
+27,Commander,37,8
+28,Pilot,21,9
+29,Navigator,29,9
+30,Mission Specialist,20,9
+31,Commander,37,9
+32,Pilot,8,10
+33,Navigator,3,10
+34,Technician,1,10
+35,Pilot,18,11
+36,Navigator,39,11
+37,Mission Specialist,20,11
+38,Mission Specialist,46,11
+39,Pilot,17,12
+40,Navigator,27,12
+41,Commander,48,12
+42,Mission Specialist,19,12
+43,Pilot,8,13
+44,Navigator,44,13
+45,Mission Specialist,15,13
+46,Pilot,13,14
+47,Navigator,38,14
+48,Mission Specialist,46,14
+49,Pilot,43,15
+50,Navigator,7,15
+51,Commander,49,15
+52,Pilot,21,16
+53,Navigator,33,16
+54,Mission Specialist,15,16
+55,Commander,48,16
+56,Pilot,24,17
+57,Navigator,10,17
+58,Commander,48,17
+59,Technician,28,17
+60,Pilot,25,18
+61,Navigator,10,18
+62,Mission Specialist,15,18
+63,Commander,48,18
+64,Pilot,16,19
+65,Navigator,45,19
+66,Commander,37,19
+67,Commander,49,19
+68,Pilot,2,20
+69,Navigator,45,20
+70,Pilot,13,21
+71,Navigator,40,21
+72,Pilot,53,22
+73,Navigator,39,22
+74,Pilot,47,23
+75,Navigator,29,23
+76,Pilot,41,24
+77,Navigator,31,24
+78,Pilot,22,25
+79,Navigator,36,25
+80,Pilot,11,26
+81,Navigator,52,26
+82,Pilot,43,27
+83,Navigator,60,27
+84,Mission Specialist,15,27
+85,Pilot,55,28
+86,Navigator,58,28
+87,Technician,9,28
+88,Commander,48,28
+89,Pilot,5,29
+90,Navigator,58,29
+91,Commander,49,29
+92,Commander,37,29
+93,Pilot,16,30
+94,Navigator,26,30
+95,Mission Specialist,46,30
+96,Technician,28,30
+97,Pilot,25,31
+98,Navigator,42,31
+99,Mission Specialist,30,31
+100,Mission Specialist,46,31
+101,Pilot,57,32
+102,Navigator,6,32
+103,Mission Specialist,15,32
+104,Mission Specialist,20,32
+105,Pilot,17,33
+106,Navigator,3,33
+107,Technician,28,33
+108,Pilot,61,34
+109,Navigator,62,34
+110,Technician,9,34
+111,Technician,1,34
+112,Pilot,5,35
+113,Navigator,56,35
+114,Technician,1,35
+115,Mission Specialist,50,35
+116,Pilot,55,36
+117,Navigator,54,36
+118,Commander,48,36
+119,Technician,9,36
+120,Pilot,14,37
+121,Navigator,26,37
+122,Technician,1,37
+123,Pilot,51,38
+124,Navigator,56,38
+125,Commander,49,38
+126,Mission Specialist,50,38
+127,Pilot,23,39
+128,Navigator,6,39
+129,Technician,1,39
+130,Mission Specialist,20,39
+131,Pilot,57,40
+132,Navigator,56,40
+133,Mission Specialist,15,40
+134,Mission Specialist,19,40
+135,Pilot,23,41
+136,Navigator,3,41
+137,Mission Specialist,46,41
+138,Mission Specialist,30,41
+139,Pilot,59,42
+140,Navigator,44,42
+141,Mission Specialist,50,42
+142,Technician,1,42
+143,Pilot,57,43
+144,Navigator,34,43
+145,Mission Specialist,19,43
+146,Commander,49,43
+147,Pilot,17,44
+148,Navigator,6,44
+149,Technician,1,44
+150,Commander,37,44
+151,Pilot,5,45
+152,Navigator,38,45
+153,Commander,49,45
+154,Mission Specialist,15,45
+155,Pilot,17,46
+156,Navigator,38,46
+157,Mission Specialist,19,46
+158,Mission Specialist,50,46
+159,Pilot,55,47
+160,Navigator,64,47
+161,Commander,37,47
+162,Mission Specialist,20,47
+163,Pilot,23,48
+164,Navigator,3,48
+165,Mission Specialist,20,48
+166,Pilot,23,49
+167,Navigator,3,49
+168,Commander,37,49
+169,Mission Specialist,15,49
+170,Pilot,25,50
+171,Navigator,58,50
+172,Technician,28,50
+173,Pilot,35,51
+174,Navigator,34,51
+175,Commander,37,51
+176,Mission Specialist,19,51
+177,Pilot,61,52
+178,Navigator,38,52
+179,Technician,28,52
+180,Pilot,57,53
+181,Navigator,44,53
+182,Technician,28,53
+183,Technician,9,53
+184,Pilot,57,54
+185,Navigator,44,54
+186,Technician,9,54
+187,Pilot,16,55
+188,Navigator,42,55
+189,Commander,37,55
+190,Commander,48,55
+191,Pilot,24,56
+192,Navigator,42,56
+193,Commander,37,56
+194,Pilot,57,57
+195,Navigator,7,57
+196,Commander,49,57
+197,Mission Specialist,46,57
+198,Pilot,35,58
+199,Navigator,56,58
+200,Technician,28,58
+201,Pilot,16,59
+202,Navigator,10,59
+203,Mission Specialist,15,59
+204,Commander,48,59
+205,Pilot,35,60
+206,Navigator,44,60
+207,Commander,48,60
+208,Pilot,35,61
+209,Navigator,34,61
+210,Mission Specialist,19,61
+211,Pilot,55,62
+212,Navigator,3,62
+213,Mission Specialist,15,62
+214,Technician,28,62
+215,Pilot,18,63
+216,Navigator,60,63
+217,Mission Specialist,30,63
+218,Pilot,8,64
+219,Navigator,62,64
+220,Mission Specialist,20,64
+221,Pilot,43,65
+222,Navigator,10,65
+223,Technician,9,65
+224,Mission Specialist,30,65
+225,Pilot,32,66
+226,Navigator,6,66
+227,Mission Specialist,19,66
+228,Mission Specialist,30,66
+229,Pilot,8,67
+230,Navigator,4,67
+231,Mission Specialist,50,67
+232,Commander,48,67
+233,Pilot,63,68
+234,Navigator,64,68
+235,Mission Specialist,20,68
+236,Technician,28,68
+237,Pilot,55,69
+238,Navigator,58,69
+239,Commander,37,69
+240,Pilot,24,70
+241,Navigator,54,70
+242,Mission Specialist,15,70
+243,Mission Specialist,20,70
+244,Pilot,55,71
+245,Navigator,56,71
+246,Commander,37,71
+247,Pilot,8,72
+248,Navigator,33,72
+249,Mission Specialist,50,72
+250,Pilot,55,73
+251,Navigator,62,73
+252,Commander,49,73
+253,Pilot,18,74
+254,Navigator,27,74
+255,Pilot,25,75
+256,Navigator,38,75
+257,Mission Specialist,50,75
+258,Mission Specialist,20,75
+259,Pilot,21,76
+260,Navigator,4,76
+261,Mission Specialist,20,76
+262,Pilot,63,77
+263,Navigator,42,77
+264,Commander,37,77
+265,Mission Specialist,30,77
+266,Pilot,57,78
+267,Navigator,44,78
+268,Mission Specialist,50,78
+269,Mission Specialist,15,78
+270,Pilot,21,79
+271,Navigator,42,79
+272,Commander,48,79
+273,Pilot,59,80
+274,Navigator,38,80
+275,Mission Specialist,30,80
+276,Pilot,24,81
+277,Navigator,64,81
+278,Mission Specialist,46,81
+279,Pilot,57,82
+280,Navigator,60,82
+281,Mission Specialist,30,82
+282,Mission Specialist,46,82
+283,Pilot,24,83
+284,Navigator,10,83
+285,Mission Specialist,15,83
+286,Pilot,32,84
+287,Navigator,3,84
+288,Commander,48,84
+289,Pilot,18,85
+290,Navigator,26,85
+291,Commander,49,85
+292,Technician,9,85
+293,Pilot,61,86
+294,Navigator,64,86
+295,Technician,1,86
+296,Pilot,8,87
+297,Navigator,7,87
+298,Mission Specialist,50,87
+299,Pilot,24,88
+300,Navigator,34,88
+301,Mission Specialist,46,88
+302,Pilot,14,89
+303,Navigator,12,89
+304,Pilot,8,90
+305,Navigator,26,90
+306,Pilot,21,91
+307,Navigator,12,91
+308,Technician,1,91
+309,Pilot,23,92
+310,Navigator,34,92
+311,Mission Specialist,15,92
+312,Pilot,61,93
+313,Navigator,34,93
+314,Mission Specialist,30,93
+315,Pilot,32,94
+316,Navigator,7,94
+317,Mission Specialist,20,94
+318,Mission Specialist,46,94
+319,Pilot,57,95
+320,Navigator,44,95
+321,Mission Specialist,50,95
+322,Pilot,17,96
+323,Navigator,26,96
+324,Technician,1,96
+325,Pilot,57,97
+326,Navigator,58,97
+327,Mission Specialist,30,97
+328,Pilot,32,98
+329,Navigator,54,98
+330,Mission Specialist,30,98
+331,Pilot,35,99
+332,Navigator,54,99
+333,Technician,28,99
+334,Pilot,63,100
+335,Navigator,42,100
+336,Technician,1,100
+337,Mission Specialist,15,100
+338,Pilot,18,101
+339,Navigator,33,101
+340,Commander,37,101
+341,Pilot,32,102
+342,Navigator,26,102
+343,Mission Specialist,20,102
+344,Mission Specialist,19,102
