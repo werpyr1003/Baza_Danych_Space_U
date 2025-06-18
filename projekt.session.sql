@@ -1,4 +1,3 @@
---Czasami warto odpalac w częściach 
 
 DROP DATABASE team08;
 CREATE DATABASE team08;
@@ -80,6 +79,13 @@ CREATE TABLE planet
   PRIMARY KEY (planet_id)
 );
 
+CREATE TABLE planet_feature
+(
+  planet_id  SMALLINT NOT NULL,
+  feature_id SMALLINT NOT NULL,
+  PRIMARY KEY (planet_id, feature_id)
+);
+
 CREATE TABLE planetary_system
 (
   system_id    SMALLINT    NOT NULL,
@@ -98,6 +104,13 @@ CREATE TABLE rocket
   name      VARCHAR(50) NULL    ,
   capacity  SMALLINT    NOT NULL,
   PRIMARY KEY (rocket_id)
+);
+
+CREATE TABLE special_feature
+(
+  feature_id SMALLINT NOT NULL,
+  feature    TEXT     NULL    ,
+  PRIMARY KEY (feature_id)
 );
 
 CREATE TABLE transaction
@@ -120,7 +133,6 @@ CREATE TABLE trip
   return_date    DATE                                      NULL    ,
   status         ENUM("Scheduled", "Completed", "Delayed") NULL    ,
   speed          INT                                       NOT NULL,
-  rescheduled_departure DATE NULL,
   delay_days INT NULL,
   PRIMARY KEY (trip_id)
 );
@@ -138,7 +150,6 @@ CREATE TABLE trip_type
 (
   trip_type_id   SMALLINT    NOT NULL,
   name          VARCHAR(50) NULL    ,
-  description   TEXT        NULL    ,
   is_round_trip BOOLEAN     NULL    ,
   planet_id     SMALLINT    NOT NULL,
   PRIMARY KEY (trip_type_id)
@@ -214,7 +225,12 @@ ALTER TABLE trip_employee
     FOREIGN KEY (trip_id)
     REFERENCES trip (trip_id);
 
+ALTER TABLE planet_feature
+  ADD CONSTRAINT FK_planet_TO_planet_feature
+    FOREIGN KEY (planet_id)
+    REFERENCES planet (planet_id);
 
-SELECT count(name), is_round_trip FROM trip_type
-GROUP BY is_round_trip
-
+ALTER TABLE planet_feature
+  ADD CONSTRAINT FK_special_feature_TO_planet_feature
+    FOREIGN KEY (feature_id)
+    REFERENCES special_feature (feature_id);
