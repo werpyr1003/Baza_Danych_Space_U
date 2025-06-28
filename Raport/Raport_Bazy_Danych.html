@@ -37,7 +37,40 @@ ul.task-list li input[type="checkbox"] {
 <script src="Raport_Bazy_Danych_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Raport_Bazy_Danych_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Raport_Bazy_Danych_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Raport_Bazy_Danych_files/libs/kePrint-0.0.1/kePrint.js"></script>
 
+<link href="Raport_Bazy_Danych_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -78,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="wstęp-o-firmie" class="level1">
 <h1>Wstęp o firmie</h1>
-<p>Firma Space-U jest frimą turystyczną organizującą wyprawy kosmiczne, oferującą doświadczenie podróży między galaktycznych. Firma zatrudnia 50 pracowników na stanowiskach Technician, Navigator, Pilot, Mission Specialist, Commander i do tej pory obsłużyła 1000 klientów. Do dyspozycji firmy jest 20 rakiet. Firma oferuje 37 typów wypraw. Firma operuje w 4 galaktykach w tym w 12 systemach planetranych</p>
+<p>Firma Space-U jest firmą turystyczną organizującą wyprawy kosmiczne, oferującą doświadczenie podróży między galaktycznych. Firma zatrudnia 62 pracowników na stanowiskach Technician, Pilot, Commander, Mission Specialist, Navigator i do tej pory obsłużyła 1000 klientów. Do dyspozycji firmy jest 20 rakiet. Firma oferuje 45 typów wypraw. Firma operuje w 5 galaktykach, w tym w 15 systemach planetarnych</p>
 </section>
 <section id="zawartość-raportu" class="level1">
 <h1>Zawartość raportu</h1>
@@ -98,35 +131,298 @@ ul.task-list li input[type="checkbox"] {
 <section id="najpopularniejsze-wyprawy---koszty-przychody-i-opłacalność" class="level1">
 <h1>Najpopularniejsze wyprawy - koszty, przychody i opłacalność</h1>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 37 × 7
-# Groups:   trip_type_id [37]
-   trip_type_id trip_name        bookings_count total_costs total_revenue profit
-          &lt;int&gt; &lt;chr&gt;                   &lt;int64&gt;       &lt;dbl&gt;         &lt;dbl&gt;  &lt;dbl&gt;
- 1           21 Mission to Ursa…            107     795208.     18095148. 1.73e7
- 2           31 Mission to Lunae             99    1570270.     35114697. 3.35e7
- 3           27 Mission to Hest…             96    1424404.     28731963. 2.73e7
- 4           19 Mission to Aulo…             91     639828.     14583322. 1.39e7
- 5            8 Mission to Scae…             87    1453355.     33389298. 3.19e7
- 6           32 Mission to Ops               84     449034.     10663573. 1.02e7
- 7           28 Mission to Hype…             81    1181046.     25489729. 2.43e7
- 8            1 Mission to Atro…             81    1876174.     31017773. 2.91e7
- 9           20 Mission to Veni…             80     959392.     19949411. 1.90e7
-10           16 Mission to Cael…             76     731736.     13718268  1.30e7
-# ℹ 27 more rows
-# ℹ 1 more variable: profit_margin &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabela 1. Zestawienie popularności, kosztów i zysków według rodzaju podróży</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">trip_type_id</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">trip_name</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">bookings_count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_costs</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_revenue</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">profit</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">profit_margin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Mission to Caelus</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: right;">12617124.57</td>
+<td style="text-align: right;">369821730</td>
+<td style="text-align: right;">357204605</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">34</td>
+<td style="text-align: left;">Mission to Heliora</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">927744.50</td>
+<td style="text-align: right;">26976635</td>
+<td style="text-align: right;">26048891</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Mission to Mnestra</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">1099196.78</td>
+<td style="text-align: right;">29636356</td>
+<td style="text-align: right;">28537160</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">36</td>
+<td style="text-align: left;">Mission to Sibylla</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">823353.13</td>
+<td style="text-align: right;">21398430</td>
+<td style="text-align: right;">20575077</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Mission to Euryale</td>
+<td style="text-align: right;">113</td>
+<td style="text-align: right;">739066.13</td>
+<td style="text-align: right;">17123445</td>
+<td style="text-align: right;">16384378</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Mission to Notos</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">6180179.15</td>
+<td style="text-align: right;">192022529</td>
+<td style="text-align: right;">185842350</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Mission to Meliora</td>
+<td style="text-align: right;">93</td>
+<td style="text-align: right;">477678.83</td>
+<td style="text-align: right;">12356239</td>
+<td style="text-align: right;">11878561</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">Mission to Oenone</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">729016.13</td>
+<td style="text-align: right;">20636205</td>
+<td style="text-align: right;">19907189</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">Mission to Eileithyia</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">343095.62</td>
+<td style="text-align: right;">8477263</td>
+<td style="text-align: right;">8134167</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">Mission to Thalia</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">444236.90</td>
+<td style="text-align: right;">12044882</td>
+<td style="text-align: right;">11600645</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">37</td>
+<td style="text-align: left;">Mission to Sterope</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">706868.76</td>
+<td style="text-align: right;">23640847</td>
+<td style="text-align: right;">22933978</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">33</td>
+<td style="text-align: left;">Mission to Laelapsa</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">483237.82</td>
+<td style="text-align: right;">12300358</td>
+<td style="text-align: right;">11817121</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td style="text-align: left;">Mission to Alecto</td>
+<td style="text-align: right;">77</td>
+<td style="text-align: right;">1034831.05</td>
+<td style="text-align: right;">25253351</td>
+<td style="text-align: right;">24218520</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Mission to Rhea</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: right;">547333.42</td>
+<td style="text-align: right;">16312973</td>
+<td style="text-align: right;">15765639</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Mission to Lemuria</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">4283618.52</td>
+<td style="text-align: right;">129000366</td>
+<td style="text-align: right;">124716747</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">Mission to Neoma</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">892507.13</td>
+<td style="text-align: right;">24049701</td>
+<td style="text-align: right;">23157194</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">Mission to Rhenara</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">1103736.60</td>
+<td style="text-align: right;">30273520</td>
+<td style="text-align: right;">29169783</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">Mission to Iris</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">551709.44</td>
+<td style="text-align: right;">13835264</td>
+<td style="text-align: right;">13283555</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">45</td>
+<td style="text-align: left;">Mission to Idonea</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">985047.54</td>
+<td style="text-align: right;">24250040</td>
+<td style="text-align: right;">23264992</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Mission to Astraeus</td>
+<td style="text-align: right;">53</td>
+<td style="text-align: right;">2007537.30</td>
+<td style="text-align: right;">64298254</td>
+<td style="text-align: right;">62290716</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">Mission to Mesembria</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">2541737.43</td>
+<td style="text-align: right;">104203169</td>
+<td style="text-align: right;">101661432</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Mission to Thyone</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">1206012.49</td>
+<td style="text-align: right;">22326374</td>
+<td style="text-align: right;">21120362</td>
+<td style="text-align: right;">0.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">43</td>
+<td style="text-align: left;">Mission to Malina</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">370028.00</td>
+<td style="text-align: right;">14101920</td>
+<td style="text-align: right;">13731892</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">17</td>
+<td style="text-align: left;">Mission to Harmonia</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">3103370.40</td>
+<td style="text-align: right;">100357738</td>
+<td style="text-align: right;">97254367</td>
+<td style="text-align: right;">0.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Mission to Cerestra</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">143286.21</td>
+<td style="text-align: right;">4080902</td>
+<td style="text-align: right;">3937616</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">Mission to Hemera</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">132289.45</td>
+<td style="text-align: right;">3732796</td>
+<td style="text-align: right;">3600506</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Mission to Leto</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">300788.35</td>
+<td style="text-align: right;">8492050</td>
+<td style="text-align: right;">8191262</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">Mission to Metis</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">333248.93</td>
+<td style="text-align: right;">9211757</td>
+<td style="text-align: right;">8878508</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Mission to Eucharis</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">84710.69</td>
+<td style="text-align: right;">1974244</td>
+<td style="text-align: right;">1889533</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">31</td>
+<td style="text-align: left;">Mission to Vacuna</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">352564.65</td>
+<td style="text-align: right;">8791772</td>
+<td style="text-align: right;">8439207</td>
+<td style="text-align: right;">0.96</td>
+</tr>
+</tbody>
+</table>
+
+
 </div>
 </div>
-</div>
-<p>Analiza danych rezerwacyjnych wskazuje, że największą popularnością wśród klientów cieszyły się wyprawy typu Mission to Ursaea, Mission to Lunae, Mission to Hestia, Mission to Aulonia, Mission to Scaena. Każda z nich miała od 87 do 107 rezerwacji, co potwierdza ich wysokie zainteresowanie na tle pozostałych ofert.</p>
+<p>Tabela 1. przedstawia zestawienie danych dotyczących różnych typów podróży kosmicznych. Każdy wiersz odnosi się do konkretnego rodzaju podróży (<em>trip_name</em>). Kolumna <em>bookings_count</em> zawiera liczbę dokonanych rezerwacji, <em>total_costs</em> to całkowite koszty realizacji danego typu podróży, natomiast <em>total_revenue</em> przedstawia łączny przychód. Na tej podstawie wyliczono <em>profit</em> (czyli zysk netto: przychód minus koszty) oraz <em>profit_margin</em> – marżę zysku, wyrażoną jako udział zysku w przychodzie.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -136,63 +432,332 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>Analiza danych rezerwacyjnych wskazuje, że największą popularnością wśród klientów cieszyły się wyprawy typu Mission to Caelus, Mission to Heliora, Mission to Mnestra, Mission to Sibylla, Mission to Euryale. Każda z nich miała od 113 do 121 rezerwacji, co potwierdza ich wysokie zainteresowanie na tle pozostałych ofert.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Pod względem rentowności na czoło wysuwają się wyprawy:<br>
-- Mission to Ursaea : 17.30 mln zysku brutto<br>
-- Mission to Lunae : 33.54 mln USD zysku brutto<br>
-- Mission to Hestia : 27.31 mln USD zysku brutto<br>
-- Mission to Aulonia : 13.94 mln USD zysku brutto<br>
-- Mission to Scaena : 31.94 mln USD zysku brutto</p>
-<p>To pokazuje, że nie tylko popularność wpływa na opłacalność – ważna jest również struktura kosztów i cena jednostkowa. Co ciekawe, wiele wypraw z mniejszą liczbą rezerwacji (np.17 z 37) okazało się bardziej zyskownych niż te najbardziej uczęszczane.</p>
+- Mission to Caelus : 357.20 mln USD zysku brutto<br>
+- Mission to Heliora : 26.05 mln USD zysku brutto<br>
+- Mission to Mnestra : 28.54 mln USD zysku brutto<br>
+- Mission to Sibylla : 20.58 mln USD zysku brutto<br>
+- Mission to Euryale : 16.38 mln USD zysku brutto</p>
+<p>To pokazuje, że nie tylko popularność wpływa na opłacalność – ważna jest również struktura kosztów i cena jednostkowa. Co ciekawe, wiele wypraw z mniejszą liczbą rezerwacji (np.13 z 30) okazało się bardziej zyskownych niż te najbardziej uczęszczane.</p>
 <p>Z drugiej strony, odnotowano kilka wypraw generujących straty – np. – ich koszty przewyższyły uzyskane przychody, a wskaźnik powrotu klientów po tych wyjazdach był zerowy. Wskazuje to jednoznacznie na potrzebę rewizji tych pozycji w ofercie.</p>
-<p>Na wykresie średniego zysku na jedną wyprawę widać wyraźnie, że najlepiej radzą sobie misje związane z: Mission to Chione, Mission to Hydros, Mission to Solaria. Generują one największy zwrot z pojedynczej podróży, często kilkakrotnie wyższy niż wyprawy mniej opłacalne.</p>
 <p>Opłacalność wypraw zależy nie tylko od liczby klientów, ale przede wszystkim od właściwego zarządzania kosztami i odpowiedniego ustalenia cen. Warto skupić się na dalszym rozwijaniu wypraw o wysokiej rentowności i ograniczyć te, które przynoszą straty.</p>
 </section>
 <section id="dynamika-zmian-liczby-klientów-w-czasie" class="level1">
 <h1>Dynamika zmian liczby klientów w czasie</h1>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 36 × 7
-# Groups:   trip_type [36]
-   trip_type     planet total_income total_cost count profit avg_profit_per_trip
-   &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt;      &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;               &lt;dbl&gt;
- 1 Mission to U… Ursaea    57081226.  17780493.   358 3.93e7             109779.
- 2 Mission to S… Scaena   121402349   31540349.   330 8.99e7             272309.
- 3 Mission to L… Lunae    113556706.  33006117.   315 8.06e7             255716.
- 4 Mission to O… Ops       34556508.  10524926.   311 2.40e7              77272.
- 5 Mission to H… Hestia    85894149.  27412106.   300 5.85e7             194940.
- 6 Mission to V… Venil…    73556591.  19312250.   280 5.42e7             193730.
- 7 Mission to Z… Zephy…    47898404.  14079894.   276 3.38e7             122531.
- 8 Mission to A… Aulon…    39542149.  14686000.   271 2.49e7              91720.
- 9 Mission to N… Nausi…    33489523.  12429802.   254 2.11e7              82912.
-10 Mission to C… Caelus    42203837.  13554176.   248 2.86e7             115523.
-# ℹ 26 more rows</code></pre>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabela 2. Suma przychodów, kosztów i liczba wypraw dla każdego typu wycieczki</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">trip_type</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">trip_type_id</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_income</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_cost</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">profit</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">avg_profit_per_trip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mission to Caelus</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1479286918</td>
+<td style="text-align: right;">297791064</td>
+<td style="text-align: right;">484</td>
+<td style="text-align: right;">1181495854</td>
+<td style="text-align: right;">2441107.14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Heliora</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">107906540</td>
+<td style="text-align: right;">23385308</td>
+<td style="text-align: right;">480</td>
+<td style="text-align: right;">84521232</td>
+<td style="text-align: right;">176085.90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Mnestra</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">118545425</td>
+<td style="text-align: right;">25721445</td>
+<td style="text-align: right;">476</td>
+<td style="text-align: right;">92823981</td>
+<td style="text-align: right;">195008.36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Sibylla</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">85593722</td>
+<td style="text-align: right;">19020064</td>
+<td style="text-align: right;">460</td>
+<td style="text-align: right;">66573657</td>
+<td style="text-align: right;">144725.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Euryale</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">68493778</td>
+<td style="text-align: right;">15591836</td>
+<td style="text-align: right;">452</td>
+<td style="text-align: right;">52901942</td>
+<td style="text-align: right;">117039.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Notos</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">768090116</td>
+<td style="text-align: right;">155163943</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">612926173</td>
+<td style="text-align: right;">1532315.43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Meliora</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">49424957</td>
+<td style="text-align: right;">11276952</td>
+<td style="text-align: right;">372</td>
+<td style="text-align: right;">38148006</td>
+<td style="text-align: right;">102548.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Eileithyia</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">33909050</td>
+<td style="text-align: right;">8304690</td>
+<td style="text-align: right;">368</td>
+<td style="text-align: right;">25604360</td>
+<td style="text-align: right;">69577.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Oenone</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">82544819</td>
+<td style="text-align: right;">17784964</td>
+<td style="text-align: right;">368</td>
+<td style="text-align: right;">64759855</td>
+<td style="text-align: right;">175977.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Sterope</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">94563387</td>
+<td style="text-align: right;">20172998</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">74390390</td>
+<td style="text-align: right;">206639.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Thalia</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">48179527</td>
+<td style="text-align: right;">10884146</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: right;">37295381</td>
+<td style="text-align: right;">103598.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Laelapsa</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">49201434</td>
+<td style="text-align: right;">11291007</td>
+<td style="text-align: right;">352</td>
+<td style="text-align: right;">37910427</td>
+<td style="text-align: right;">107700.08</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Alecto</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">101013402</td>
+<td style="text-align: right;">21290001</td>
+<td style="text-align: right;">308</td>
+<td style="text-align: right;">79723402</td>
+<td style="text-align: right;">258842.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Rhea</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">65251891</td>
+<td style="text-align: right;">14147819</td>
+<td style="text-align: right;">304</td>
+<td style="text-align: right;">51104073</td>
+<td style="text-align: right;">168105.50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Lemuria</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">516001462</td>
+<td style="text-align: right;">104327892</td>
+<td style="text-align: right;">284</td>
+<td style="text-align: right;">411673570</td>
+<td style="text-align: right;">1449554.83</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Neoma</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">96198805</td>
+<td style="text-align: right;">20232801</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">75966005</td>
+<td style="text-align: right;">271307.16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Rhenara</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">121094080</td>
+<td style="text-align: right;">25203296</td>
+<td style="text-align: right;">272</td>
+<td style="text-align: right;">95890784</td>
+<td style="text-align: right;">352539.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Iris</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">55341056</td>
+<td style="text-align: right;">12012131</td>
+<td style="text-align: right;">264</td>
+<td style="text-align: right;">43328926</td>
+<td style="text-align: right;">164124.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Idonea</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">97000158</td>
+<td style="text-align: right;">20307592</td>
+<td style="text-align: right;">252</td>
+<td style="text-align: right;">76692567</td>
+<td style="text-align: right;">304335.58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Astraeus</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">257193014</td>
+<td style="text-align: right;">52265083</td>
+<td style="text-align: right;">212</td>
+<td style="text-align: right;">204927931</td>
+<td style="text-align: right;">966641.19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Mesembria</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">416812676</td>
+<td style="text-align: right;">83877335</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">332935341</td>
+<td style="text-align: right;">2522237.43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Malina</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">56407680</td>
+<td style="text-align: right;">11840896</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">44566784</td>
+<td style="text-align: right;">348178.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Thyone</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">89305496</td>
+<td style="text-align: right;">18391019</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">70914477</td>
+<td style="text-align: right;">554019.35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Cerestra</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">16323608</td>
+<td style="text-align: right;">3725441</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">12598167</td>
+<td style="text-align: right;">121136.22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Harmonia</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">401430951</td>
+<td style="text-align: right;">80687630</td>
+<td style="text-align: right;">104</td>
+<td style="text-align: right;">320743321</td>
+<td style="text-align: right;">3084070.39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Hemera</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">14931182</td>
+<td style="text-align: right;">3307236</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">11623946</td>
+<td style="text-align: right;">116239.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Leto</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">33968201</td>
+<td style="text-align: right;">7218920</td>
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">26749281</td>
+<td style="text-align: right;">278638.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Metis</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">36847027</td>
+<td style="text-align: right;">7664725</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">29182301</td>
+<td style="text-align: right;">317198.93</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mission to Eucharis</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">7896977</td>
+<td style="text-align: right;">1863635</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">6033341</td>
+<td style="text-align: right;">68560.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mission to Vacuna</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">35167088</td>
+<td style="text-align: right;">7403858</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">27763230</td>
+<td style="text-align: right;">330514.65</td>
+</tr>
+</tbody>
+</table>
+
+
 </div>
 </div>
-<p>Zestawienie pokazuje łączny przychód, koszty i zyski brutto dla poszczególnych typów wypraw. Najwięcej wypraw przeprowadzono na planetę Ursaea (358 wypraw), a najmniej w przypadku planety Lavinia (18 wypraw).</p>
+<p>Tabela 2. przedstawia zestawienie finansowe dla różnych typów wycieczek kosmicznych, oznaczonych identyfikatorem <em>trip_type_id</em>. Kolumny <em>total_income</em> oraz <em>total_cost</em> przedstawiają łączne wartości przychodów i kosztów wygenerowanych przez każdy typ wycieczki. W kolumnie <em>count</em> znajduje się liczba zrealizowanych wypraw danego rodzaju. Na tej podstawie wyliczono wartość <em>profit</em> (czyli całkowity zysk) oraz <em>avg_profit_per_trip</em> — średni zysk przypadający na jedną wyprawę.</p>
+<p>Zestawienie pokazuje łączny przychód, koszty i zyski brutto dla poszczególnych typów wypraw. Najwięcej wypraw przeprowadzono na planetę Caelus (484 wypraw), a najmniej w przypadku planety Vacuna (84 wypraw).</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Wykres pokazuje średni zysk brutto przypadający na pojedynczą wyprawę dla każdego typu misji. Na jego podstawie widać, że wyprawy typu Mission to Chione, Mission to Hydros, Mission to Calytrix, Mission to Solaria, Mission to Voluspa są pięcioma najbardziej dochodowymi. Z kolei wyprawy, które generują najniższy średni zysk (lub nawet straty), to Mission to Astraeus, Mission to Serapia, Mission to Thalassa. Wskazuje to, że warto dokładnie przeanalizować ich opłacalność i ewentualnie rozważyć modyfikację oferty.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Analiza miesięczna pokazuje, jak zmieniała się liczba obsłużonych klientów na przestrzeni czasu. Największy ruch zanotowano w luty 2023, obsługując wtedy 270 unikalnych klientów. Z kolei najmniej klientów firma miała w sierpień 2024, tylko 37 osób.</p>
-<p>Można zauważyć, że najchętniej wybieranym sezonem na wyprawy jest okres zimowo-wiosenny. Zmienność w liczbie klientów sugeruje potrzebę elastycznego zarządzania zasobami i wdrożenia sezonowych strategii cenowych.</p>
-</section>
-<section id="powracalność-klientów" class="level1">
-<h1>Powracalność klientów</h1>
+<p>Wykres pokazuje średni zysk brutto przypadający na pojedynczą wyprawę dla każdego typu misji. Na jego podstawie widać, że wyprawy typu Mission to Harmonia, Mission to Mesembria, Mission to Caelus, Mission to Notos, Mission to Lemuria są pięcioma najbardziej dochodowymi. Z kolei wyprawy, które generują najniższy średni zysk (lub nawet straty), to Mission to Meliora, Mission to Eileithyia, Mission to Eucharis. Wskazuje to, że warto dokładnie przeanalizować ich opłacalność i ewentualnie rozważyć modyfikację oferty.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -202,11 +767,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Na wykresie widać, które wycieczki budują lojalność klientów. Najlepiej wypadły: Mission to Murena. Wysoka lojalność może wskazywać na unikalne doświadczenia, wysoki poziom satysfakcji lub atrakcyjną cenę. Warto zwrócić uwagę na wyprawy z niskim wskaźnikiem powrotu – poniżej 0.3 – takie jak Mission to Atropos, Mission to Nausicaa, które wymagają dalszej analizy i ewentualnego dostosowania oferty.</p>
-<p>Lojalność klientów powinna być kluczowym wskaźnikiem sukcesu wypraw – warto ją monitorować i budować programy retencji oparte na danych.</p>
+<p>Analiza miesięczna pokazuje, jak zmieniała się liczba obsłużonych klientów na przestrzeni czasu. Największy ruch zanotowano w wrzesień 2023, obsługując wtedy 184 unikalnych klientów. Z kolei najmniej klientów firma miała w lipiec 2023, tylko 19 osób.</p>
+<p>Można zauważyć, że najchętniej wybieranym sezonem na wyprawy jest okres zimowo-wiosenny. Zmienność w liczbie klientów sugeruje potrzebę elastycznego zarządzania zasobami i wdrożenia sezonowych strategii cenowych.</p>
 </section>
-<section id="porównanie-wycieczek-w-jedną-stronę-z-wycieczkami-tam-i-spowrotem" class="level1">
-<h1>Porównanie wycieczek w jedną stronę z wycieczkami “tam i spowrotem”</h1>
+<section id="powracalność-klientów" class="level1">
+<h1>Powracalność klientów</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -216,7 +781,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Największy udział round-tripów odnotowano dla planety Atropos, Hestia, Lunae, Ursaea, gdzie współczynnik wyniósł 5. Świadczy to o ich atrakcyjności lub logistyce sprzyjającej podróżom powrotnym.</p>
+<p>Na wykresie widać, które wycieczki budują lojalność klientów. Najlepiej wypadły: Mission to Vacuna, Mission to Sibylla, Mission to Euryale, Mission to Iris, Mission to Mnestra, Mission to Lemuria, Mission to Alecto, Mission to Rhenara, powyżej 0.64. Wysoka lojalność może wskazywać na unikalne doświadczenia, wysoki poziom satysfakcji lub atrakcyjną cenę. Warto zwrócić uwagę na wyprawy z niskim wskaźnikiem powrotu – poniżej 0.3 – takie jak Mission to Oenone, które wymagają dalszej analizy i ewentualnego dostosowania oferty.</p>
+<p>Lojalność klientów powinna być kluczowym wskaźnikiem sukcesu wypraw – warto ją monitorować i budować programy retencji oparte na danych.</p>
+</section>
+<section id="porównanie-wycieczek-w-jedną-stronę-z-wycieczkami-tam-i-z-powrotem" class="level1">
+<h1>Porównanie wycieczek w jedną stronę z wycieczkami “tam i z powrotem”</h1>
+<p>Współczynnik round-trip ratio określa stosunek liczby podróży tam i z powrotem do liczby wypraw w jedną stronę. Jest liczony jako:</p>
+<p><span class="math display">\[
+\mathrm{round\_trip\_ratio} = \frac{\mathrm{round\_trip}}{\mathrm{one\_way} + 1}
+\]</span></p>
+<p>Użycie +1 w mianowniku zapobiega dzieleniu przez zero w przypadku braku podróży one-way.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -226,7 +800,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Cechy specjalne mają wpływ na preferencje dotyczące typu wypraw. Najwyższą medianę współczynnika round-trip zaobserwowano dla cechy diamond_rain,glowing_mountains,pink_sun, eternal_night,1000<em>C, eternal_night,frozen_oceans,huge_gravity,1000</em>C</p>
+<p>Największy udział round-tripów odnotowano dla planety Euryale, gdzie współczynnik wyniósł 30. Świadczy to o ich atrakcyjności lub logistyce sprzyjającej podróżom powrotnym.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -236,7 +810,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Widoczna jest ujemna korelacja (-0.15) między długością orbity a skłonnością do wypraw typu round-trip,co oznacza, że dalsze planety rzadziej odwiedzane są z powrotem.</p>
+<p>Cechy specjalne mają wpływ na preferencje dotyczące typu wypraw. Najwyższą medianę współczynnika round-trip zaobserwowano dla cechy lava_rivers. Sugeruje to, że planety zawierające tą cechę są atrakcyjne do wizyt powrotnych – być może ze względu na warunki sprzyjające krótkim, rekreacyjnym wyprawom.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -246,47 +820,100 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Analiza wykazała, że planety z najwyższym współczynnikiem round-trip to m.in. Atropos, Hestia, Lunae, Ursaea, z maksymalnym wskaźnikiem 5. Cechy specjalne mają wpływ na preferencje — najwyższą medianę round-trip odnotowano dla planet z cechą diamond_rain,glowing_mountains,pink_sun. Zauważono też ujemną korelację między okresem orbitalnym a preferencją round-trip (r = -0.15). W przestrzeni najwięcej planet to te z 21 dominującymi round-trip, 4 dominującymi one-way i 12 zrównoważonymi wyprawami.</p>
+<p>Widoczna jest ujemna korelacja (-0.14) między długością orbity a skłonnością do wypraw typu round-trip,co oznacza, że dalsze planety rzadziej odwiedzane są z powrotem.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Analiza wykazała, że planety z najwyższym współczynnikiem round-trip to m.in. Euryale, z maksymalnym wskaźnikiem 30. W przestrzeni najwięcej planet to te z 21 dominującymi round-trip, 7 dominującymi one-way i 2 zrównoważonymi wyprawami. Oznacza to, że różnorodność preferencji podróżnych jest wyraźnie widoczna i może wskazywać na zróżnicowane potrzeby oraz charakterystyki poszczególnych planet.</p>
 <p>Wnioski te mogą być wykorzystane przy planowaniu nowych kierunków i tworzeniu elastycznych modeli podróży (np. mix one-way + return).</p>
 </section>
 <section id="wpływ-pojemności-rakiety-na-czynniki-podróży" class="level1">
 <h1>Wpływ pojemności rakiety na czynniki podróży</h1>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 4
-  capacity total_clients total_flights delayed_flights
-     &lt;int&gt;         &lt;int&gt;         &lt;int&gt;           &lt;int&gt;
-1       12            80             4              35
-2       11           281            15             116
-3       10           249            12              40
-4        9           298            14              90
-5        8           200            10              72
-6        7           160             8              37
-7        5           513            27             186
-8        4           252            12              67</code></pre>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabela 3. Dane dotyczące rakiet względem ich pojemności</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">capacity</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_clients</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">total_flights</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">delayed_flights</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">380</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">233</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">481</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">223</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">305</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+
 </div>
 </div>
-<p>Największą liczbę klientów przewieziono rakietami o pojemności 5, łączna liczba obsłużonych pasażerów wyniosła aż 513. Jeśli chodzi o liczbę odbytych lotów, przodowały rakiety o pojemności 5, wykonując 27 wypraw.</p>
+<p>Tabela 3. prezentuje statystyki dotyczące rakiet w zależności od ich pojemności (<em>capacity</em>). W kolumnie <em>total_clients</em> podano łączną liczbę obsłużonych pasażerów, <em>total_flights</em> wskazuje liczbę zrealizowanych lotów, natomiast <em>delayed_flights</em> zawiera liczbę lotów, które wystąpiły z opóźnieniem. Dane pozwalają na ocenę efektywności i niezawodności rakiet o różnej pojemności.</p>
+<p>Największą liczbę klientów przewieziono rakietami o pojemności 8, łączna liczba obsłużonych pasażerów wyniosła aż 481. Jeśli chodzi o liczbę odbytych lotów, przodowały rakiety o pojemności 8, wykonując 19 wypraw.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Pod względem średniej liczby podróży przypadającej na jednego klienta, najwyższy wynik zanotowano dla pojemności 5. W tym przypadku, przeciętny klient korzystał z usług rakiety średnio 1.2 razy. Może to świadczyć o preferencjach bardziej zaangażowanych lub lojalnych klientów.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Z kolei w zestawieniu częstości opóźnień widać wyraźne różnice. Najniższy odsetek opóźnionych lotów dotyczył rakiet o pojemności 10, wynosząc 333%. Największy odsetek opóźnień przypadł na rakiety o pojemności 12, gdzie opóźnienia osiągnęły aż 875%.</p>
+<p>Pod względem średniej liczby podróży przypadającej na jednego klienta, najwyższy wynik zanotowano dla pojemności 8. W tym przypadku, przeciętny klient korzystał z usług rakiety średnio 1.19 razy. Może to świadczyć o preferencjach bardziej zaangażowanych lub lojalnych klientów.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -296,20 +923,20 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Liczba klientów w zależności od pojemności pokazuje wyraźną tendencję: rakiety o większej pojemności obsługują więcej pasażerów. Największą popularnością cieszyły się maszyny o pojemności 5, które przewiozły łącznie 513 klientów. Mniejsze rakiety naturalnie miały mniejsze obłożenie, co jednak może być również efektem ich rzadszego wykorzystania w harmonogramie lotów.</p>
-</section>
-<section id="analiza-wynagrodzenia-pracowników-względem-uczęszczanych-wypraw" class="level1">
-<h1>Analiza wynagrodzenia pracowników względem uczęszczanych wypraw</h1>
+<p>Z kolei w zestawieniu częstości opóźnień widać wyraźne różnice. Najniższy odsetek opóźnionych lotów dotyczył rakiet o pojemności 12, 11, 10, 8, 7, 5, 4, wynosząc 0%. Największy odsetek opóźnień przypadł na rakiety o pojemności 9, gdzie opóźnienia osiągnęły aż 18%.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Analiza liczby wystąpień ról pokazuje, które funkcje są kluczowe i najczęściej powtarzane. Wykres słupkowy pomaga zidentyfikować, że dominujące role to Navigator, Pilot. Oznacza to, że są to funkcje kluczowe operacyjnie, silnie związane z liczbą realizowanych wypraw.</p>
+<p>Liczba klientów w zależności od pojemności pokazuje wyraźną tendencję: rakiety o większej pojemności obsługują więcej pasażerów. Największą popularnością cieszyły się maszyny o pojemności 8, które przewiozły łącznie 481 klientów. Mniejsze rakiety naturalnie miały mniejsze obłożenie, co jednak może być również efektem ich rzadszego wykorzystania w harmonogramie lotów.</p>
+</section>
+<section id="analiza-wynagrodzenia-pracowników-względem-uczęszczanych-wypraw" class="level1">
+<h1>Analiza wynagrodzenia pracowników względem uczęszczanych wypraw</h1>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -319,67 +946,165 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Analziując wykres pokazujący zarobki pracowników, w top 3 najlepiej zarabiającmi pracownikami są Stephen Wagner, Russell West, Ricardo Boyd, którzy zarabiają między 1.19^{4} a 1.28^{4} USD. Zamują oni stanowiska Commander, Mission Specialist</p>
+<p>Analiza liczby wystąpień ról pokazuje, które funkcje są kluczowe i najczęściej powtarzane. Wykres słupkowy pomaga zidentyfikować, że dominujące role to Navigator, Pilot. Oznacza to, że są to funkcje kluczowe operacyjnie, silnie związane z liczbą realizowanych wypraw.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Porównując wykresy dotyczące liczby wypraw per rola oraz poziomu zarobków, widać dodatnia korelacja (0.37) między zaangażowaniem w wyprawy a poziomem wynagrodzenia. Oznacza to, że funkcje częściej wykorzystywane w misjach są także lepiej opłacane. Wskazuje to na dobrze dostosowaną strukturę płac do potrzeb operacyjnych.</p>
+<p>Analizując wykres pokazujący zarobki pracowników, w top 3 najlepiej zarabiającymi pracownikami są Michael Jones, Rebecca Jennings, Kimberly Mendez, którzy zarabiają między 12,500 a 13,300 USD. Zajmują oni stanowiska Commander.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Porównując wykresy dotyczące liczby wypraw per rola oraz poziomu zarobków, widać dodatnia korelacja (0.09) między zaangażowaniem w wyprawy a poziomem wynagrodzenia. Oznacza to, że funkcje częściej wykorzystywane w misjach są także lepiej opłacane. Wskazuje to na dobrze dostosowaną strukturę płac do potrzeb operacyjnych.</p>
 </section>
 <section id="wpływ-lokalizacji-planet-na-zyskowność-wypraw-oraz-związek-między-odległością-od-ziemi-a-ich-częstotliwością" class="level1">
 <h1>Wpływ lokalizacji planet na zyskowność wypraw oraz związek między odległością od Ziemi a ich częstotliwością</h1>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>      galaxy_name planetary_system num_trips total_cost total_revenue
-1   Miridian Rift           Aerion       712  657602911    2399269805
-2    Xentari Flow          Lunaris      8288  573319583    1926739254
-3  Novara Cluster          Lunaris      4784  479883083    1410591507
-4   Cryon Expanse          Thandor      3108  271364895     827400793
-5   Cryon Expanse         Zantheos      3828  237282663     744042906
-6  Novara Cluster        Quirinius      2232  201009920     679493261
-7   Miridian Rift           Cadris       212  145891114     566758551
-8   Cryon Expanse         Nymerion      2556  198071495     542279198
-9   Cryon Expanse         Neptunus      1071   87846590     309441621
-10   Xentari Flow          Minerva       718   41806729     132008616
-   avg_planet_distance net_profit profit_per_trip
-1            1372.2935 1741666895       2446161.4
-2             558.0845 1353419671        163298.7
-3             558.0845  930708424        194546.1
-4             576.3062  556035898        178904.7
-5             509.3587  506760243        132382.5
-6            1043.6056  478483341        214374.3
-7            1410.1782  420867437       1985223.8
-8             557.6494  344207703        134666.6
-9             676.6546  221595030        206904.8
-10           1169.0092   90201888        125629.4</code></pre>
-</div>
-</div>
-<p>Tabela pokazuje 10 układów planetarnych generujących największy zysk netto, co pozwala wskazać najbardziej dochodowe kierunki wypraw.</p>
-<div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<table class="table table-striped table-hover caption-top table-sm small" data-quarto-postprocess="true">
+<caption>Tabela 4. Top 10 układów planetarnych wg zysku netto</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">galaxy_name</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">planetary_system</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">planetary_system_id</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">num_trips</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">total_cost</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">total_revenue</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">avg_planet_distance</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">net_profit</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">profit_per_trip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Polaris Nexus</td>
+<td style="text-align: left;">Neptunus</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1536</td>
+<td style="text-align: left;">804,237,911</td>
+<td style="text-align: left;">3,990,576,761</td>
+<td style="text-align: right;">948.3791</td>
+<td style="text-align: left;">3,186,338,850</td>
+<td style="text-align: right;">2074439.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Polaris Nexus</td>
+<td style="text-align: left;">Trion</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4272</td>
+<td style="text-align: left;">764,041,734</td>
+<td style="text-align: left;">3,735,145,467</td>
+<td style="text-align: right;">919.8815</td>
+<td style="text-align: left;">2,971,103,733</td>
+<td style="text-align: right;">695483.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Omega Verge</td>
+<td style="text-align: left;">Phantos</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">800</td>
+<td style="text-align: left;">351,626,203</td>
+<td style="text-align: left;">1,741,596,609</td>
+<td style="text-align: right;">1007.0218</td>
+<td style="text-align: left;">1,389,970,406</td>
+<td style="text-align: right;">1737463.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kronis Ring</td>
+<td style="text-align: left;">Ilyssar</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">396</td>
+<td style="text-align: left;">251,632,006</td>
+<td style="text-align: left;">1,250,438,029</td>
+<td style="text-align: right;">497.3275</td>
+<td style="text-align: left;">998,806,023</td>
+<td style="text-align: right;">2522237.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Polaris Nexus</td>
+<td style="text-align: left;">Axioma</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2064</td>
+<td style="text-align: left;">233,959,583</td>
+<td style="text-align: left;">1,127,215,319</td>
+<td style="text-align: right;">995.4469</td>
+<td style="text-align: left;">893,255,736</td>
+<td style="text-align: right;">432778.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Virelia Cluster</td>
+<td style="text-align: left;">Liora</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2548</td>
+<td style="text-align: left;">193,456,609</td>
+<td style="text-align: left;">919,561,254</td>
+<td style="text-align: right;">567.0335</td>
+<td style="text-align: left;">726,104,645</td>
+<td style="text-align: right;">284970.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zerion Reach</td>
+<td style="text-align: left;">Typhonis</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">3612</td>
+<td style="text-align: left;">163,252,509</td>
+<td style="text-align: left;">746,523,955</td>
+<td style="text-align: right;">744.0998</td>
+<td style="text-align: left;">583,271,447</td>
+<td style="text-align: right;">161481.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Omega Verge</td>
+<td style="text-align: left;">Aether</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">144,773,630</td>
+<td style="text-align: left;">689,302,145</td>
+<td style="text-align: right;">866.5890</td>
+<td style="text-align: left;">544,528,515</td>
+<td style="text-align: right;">272264.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zerion Reach</td>
+<td style="text-align: left;">Liora</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">2520</td>
+<td style="text-align: left;">141,210,985</td>
+<td style="text-align: left;">661,943,712</td>
+<td style="text-align: right;">567.0335</td>
+<td style="text-align: left;">520,732,727</td>
+<td style="text-align: right;">206640.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zerion Reach</td>
+<td style="text-align: left;">Sagitta</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">1520</td>
+<td style="text-align: left;">128,593,950</td>
+<td style="text-align: left;">613,631,352</td>
+<td style="text-align: right;">725.8010</td>
+<td style="text-align: left;">485,037,402</td>
+<td style="text-align: right;">319103.5</td>
+</tr>
+</tbody>
+</table>
+
+
 </div>
 </div>
-</div>
-<p>Wykres “Zysk netto według galaktyk” ilustruje znaczącą koncentrację zysków w wybranych galaktykach. Galaktyka z najwyższym łącznym zyskiem netto to Miridian Rift, generująca łącznie $2,162,534,332. Najmniej zyskowną galaktyką jest Novara Cluster z łącznym zyskiem netto $1,409,191,764.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>W top 5 galaktykach widać wyraźne różnice w zyskowności między układami planetarnymi. Można zauważyć, że w niektórych galaktykach pojedyncze układy dominują pod względem generowanego zysku, co sugeruje koncentrację atrakcyjnych celów wypraw.</p>
+<p>Tabela 4. pokazuje 10 układów planetarnych generujących największy zysk netto, co pozwala wskazać najbardziej dochodowe kierunki wypraw. Kolumny <em>galaxy_name</em> oraz <em>planetary_system</em> identyfikują lokalizację danej trasy. <em>num_trips</em> to liczba odbytych wypraw, <em>total_cost</em> i <em>total_revenue</em> przedstawiają odpowiednio całkowite koszty i przychody związane z realizacją tych tras. <em>avg_planet_distance</em> wskazuje średnią odległość do planet w danym układzie. Na podstawie przychodów i kosztów obliczono również <em>net_profit</em> (zysk netto) oraz <em>profit_per_trip</em>, czyli średni zysk przypadający na jedną wyprawę.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -389,7 +1114,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Galaktyka o najwyższym średnim zysku na wyprawę to Miridian Rift, ze średnim zyskiem około $2,215,693 na wyprawę. To pokazuje, że efektywność pojedynczych wypraw różni się znacznie między galaktykami.</p>
+<p>Wykres “Zysk netto według galaktyk” ilustruje znaczącą koncentrację zysków w wybranych galaktykach. Galaktyka z najwyższym łącznym zyskiem netto to Polaris Nexus, generująca łącznie 7,178,102,797 USD. Najmniej zyskowną galaktyką jest Kronis Ring z łącznym zyskiem netto 1,189,546,052 USD.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -399,30 +1124,30 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Analiza wykazuje, że korelacja między odległością planet a liczbą wypraw wynosi -0.635, co sugeruje ujemną zależność. Oznacza to, że im dalej planeta od Ziemi, tym mniej wypraw jest do niej organizowanych.</p>
+<p>W top 5 galaktykach widać wyraźne różnice w zyskowności między układami planetarnymi. Można zauważyć, że w niektórych galaktykach pojedyncze układy dominują pod względem generowanego zysku, co sugeruje koncentrację atrakcyjnych celów wypraw.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Galaktyka o najwyższym średnim zysku na wyprawę to Kronis Ring, ze średnim zyskiem około 1,312,393 USD na wyprawę. To pokazuje, że efektywność pojedynczych wypraw różni się znacznie między galaktykami.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Analiza wykazuje, że korelacja między odległością planet a liczbą wypraw wynosi 0.186, co sugeruje brak istotnej zależności. Oznacza to, że im dalej planeta od Ziemi, tym mniej wypraw jest do niej organizowanych.</p>
 </section>
 <section id="trendy-sezonowe-w-liczbie-wypraw-przychodach-oraz-ich-statusach" class="level1">
 <h1>Trendy sezonowe w liczbie wypraw, przychodach oraz ich statusach</h1>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Największa liczba wypraw została zorganizowana w miesiącu lut, osiągając 20 wypraw. Z kolei najmniejsza liczba wypraw przypada na miesiąc wrz, z liczbą 2. Różnice sezonowe są widoczne.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Najwyższy miesięczny przychód został osiągnięty w miesiącu mar, wynosząc $238,791,876. Z kolei najniższy przychód przypadł na miesiąc wrz, osiągając $8,498,244. Tego typu wahania mogą wskazywać na sezonowość przychodów.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -432,7 +1157,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Najwięcej zakończonych wypraw odnotowano w miesiącu mar, osiągając liczbę 167.Największa liczba opóźnionych wypraw wystąpiła w miesiącu lut, a liczba tych wypraw wyniosła 170.W przypadku anulowanych wypraw szczyt przypadł na miesiąc sty, lut, mar, kwi, maj, cze, lip, sie, wrz, paź, lis, gru, gdzie naliczono 0 przypadków.</p>
+<p>Największa liczba wypraw została zorganizowana w miesiącu styczeń, osiągając 12 wypraw. Z kolei najmniejszą liczbę wypraw odnotowano w miesiącu grudzień, z liczbą 1. Różnice te sugerują istnienie wyraźnej sezonowości w liczbie organizowanych wypraw.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -442,7 +1167,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Największą liczbę wypraw zorganizowano w kwartale 1, osiągając wynik 42 wypraw. Z kolei najmniejszą liczbę wypraw zrealizowano w kwartale 4, zaledwie 12 wypraw.</p>
+<p>Najwyższy miesięczny przychód odnotowano w miesiącu czerwiec, osiągając wartość 319 mln USD. Najniższy przychód przypadł na miesiąc październik, wynosząc 9 mln USD. To również może wskazywać na sezonowość przychodów.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -452,7 +1177,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>W tych samych okresach zauważalna jest również wyraźna zmienność przychodów.Najwyższy przychód firma osiągnęła w kwartale 1, generując $466,844,710. Natomiast najniższy przychód zanotowano w kwartale 4, z wartością $60,633,390.</p>
+<p>Najwięcej zakończonych wypraw (<code>Completed</code>) odnotowano w miesiącu kwiecień, z liczbą 196 wypraw. Największa liczba opóźnionych wypraw (<code>Delayed</code>) wystąpiła w miesiącu marzec, osiągając 21 przypadków. W przypadku anulowanych wypraw (<code>Cancelled</code>) szczyt przypadł na miesiąc styczeń, luty, marzec, kwiecień, maj, czerwiec, lipiec, sierpień, wrzesień, październik, listopad, grudzień, gdzie naliczono 0 przypadków.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -462,7 +1187,27 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Najwięcej zakończonych wypraw przypadło na kwartał 1, z liczbą 418. Największa liczba opóźnionych wypraw wystąpiła w kwartale 2, natomiast najwięcej anulowanych wypraw miało miejsce w kwartale - brak anulowanych wypraw.<br>
+<p>Największą liczbę wypraw zorganizowano w kwartale 1, osiągając wynik 31 wypraw. Z kolei najmniejszą liczbę wypraw zrealizowano w kwartale 4, zaledwie 10 wypraw.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>W tych samych okresach zauważalna jest również wyraźna zmienność przychodów.Najwyższy przychód firma osiągnęła w kwartale 2, generując 574,228,592 USD. Natomiast najniższy przychód zanotowano w kwartale 4, z wartością 122,275,931 USD.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Raport_Bazy_Danych_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Najwięcej zakończonych wypraw przypadło na kwartał 2, z liczbą 424. Największa liczba opóźnionych wypraw wystąpiła w kwartale 1, natomiast najwięcej anulowanych wypraw miało miejsce w kwartale - brak anulowanych wypraw.<br>
 Takie dane pozwalają lepiej rozumieć problemy operacyjne oraz cykliczność niepowodzeń w realizacji wypraw.</p>
 <p>Ciekawostką jest, że nie odnotowano żadnych anulowanych wypraw w żadnym miesiącu, co świadczy o bardzo wysokim poziomie operacyjnej niezawodności.</p>
 </section>
